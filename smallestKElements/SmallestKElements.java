@@ -1,12 +1,15 @@
 package smallestKElements;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-//import largestKElementinBST.LargestKEklements;
 import largestKElementinBST.Node;
 
 public class SmallestKElements {
+	
+	/*
+	 * @Parameter: root of the tree,  k - > number of elements we want in the list
+	 * @return : returns a list of k smallest elements in the BST
+	 */
 	public List<Integer> kSmallestNodes(Node root, int k) {
 		List<Integer> kSmallestNode = new ArrayList<Integer>();
 		helper(root, kSmallestNode, k);
@@ -21,8 +24,7 @@ public class SmallestKElements {
 		if(kSmallestNode.size() < k) {
 			kSmallestNode.add(root.getVal());
 			helper(root.getRight(), kSmallestNode, k);
-		}
-		
+		}		
 	}
 
 	public static void main(String[] args) {
